@@ -23,7 +23,8 @@ void factorial(int n, int MOD){
     fac.resize(n + 1);fac[0] = 1;for (int i = 1; i < n; i++){fac[i] = fac[i - 1] * i % MOD;}
 }
 ll ncrmod(ll n, ll r, ll p){
-    if (n < r)return 0;if (r == 0)return 1;
+    if (n < r)return 0;
+    if (r == 0)return 1;
     return (((fac[n] * modInverse(fac[r], p)) % p) * modInverse(fac[n - r], p)) % p;
 }
 vector<ll> primes;
