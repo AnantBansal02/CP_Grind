@@ -1,0 +1,19 @@
+
+n,l,r=map(int,input().split())
+l1=[]
+s1=0
+s1=s1+n-l
+l1.append(1)
+for i in range(1,32):
+    l1.append(l1[i-1]*2)
+for j in range(l):
+    s1=s1+l1[j]
+print(s1)
+s2=0
+s2=s2+n-l
+for i in range(n-l,r):
+    s2=s2+l1[i]
+print(s2)
+    
+        
+    

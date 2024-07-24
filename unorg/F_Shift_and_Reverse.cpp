@@ -1,0 +1,112 @@
+#pragma GCC optimize("-Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define dbg(x) cout << #x << " = " << x << "\n"
+#define pb push_back
+#define fi first
+#define se second
+#define INF 1e18
+#define all(x) (x).begin(), (x).end()
+#define set_bits(x) __builtin_popcountll(x)
+
+ll power(ll x, ll y, ll p){
+    ll res = 1;x = x % p;while (y > 0){if (y & 1)res = (res * x) % p;y = y >> 1;x = (x * x) % p;}return res;
+}
+ll modInverse(ll n, ll p){
+    return power(n, p - 2, p);
+}
+vector<ll> fac;
+void factorial(int n, int MOD){
+    fac.resize(n + 1);fac[0] = 1;for (int i = 1; i < n; i++){fac[i] = fac[i - 1] * i % MOD;}
+}
+ll ncrmod(ll n, ll r, ll p){
+    if (n < r)return 0;
+    if (r == 0)return 1;
+    return (((fac[n] * modInverse(fac[r], p)) % p) * modInverse(fac[n - r], p)) % p;
+}
+vector<ll> primes;
+void seive(ll n){
+    bool prime[n + 1];memset(prime, true, sizeof(prime));
+    for (int p = 2; p * p <= n; p++) {
+        if (prime[p] == true) {for (int i = p * p; i <= n; i += p)prime[i] = false;}
+    }
+    for (int p = 2; p <= n; p++)if(prime[p])primes.push_back(p);
+}
+ll getNoOfFactors(ll num) {
+    if( num < 2 ) { return 0;}ll cnt = 0;
+    for ( auto x : primes ) {while( num % x == 0 ) {cnt++;num /= x ;}}
+    if( num > 1){cnt++;}
+    return cnt;
+}
+void solve()
+{
+    ll n;cin>>n;
+    vector<ll> arr;
+    for(ll i=0;i<n;i++){
+        ll x;cin>>x;
+        arr.emplace_back(x);
+    }
+    if(n==1){
+        cout<<"0"<<"\n";
+        return;
+    }
+    for(ll i=0;i<n;i++){
+        arr.emplace_back(arr[i]);
+    }
+    vector<ll> inc(2*n, 0);
+    vector<ll> dec(2*n, 0);
+    for(ll i=1;i<2*n;i++){
+        if(arr[i] >= arr[i-1]){
+            inc[i] = 1;
+        }
+        if(arr[i] <= arr[i-1]){
+            dec[i] = 1;
+        }
+    }
+    for(ll i=1;i<2*n;i++){
+        if(inc[i-1] != 0 and inc[i] != 0){
+            inc[i] += inc[i-1];
+        }
+        if(dec[i-1] != 0 and dec[i] != 0){
+            dec[i] += dec[i-1];
+        }
+    }
+    ll ans = INT_MAX;
+    for(ll i=1;i<2*n;i++){
+        if(inc[i] == n-1){
+            ll idx = (i+1)%n;
+            if(idx == 0){
+                ans = 0;
+            }
+            ans = min(ans, n-idx);
+            ans = min(ans, 2+idx);
+        }
+        if(dec[i] == n-1){
+            ll idx = (i+1)%n;
+            ans = min(ans, n-idx+1);
+            ans = min(ans, idx+1);
+        }
+    }
+    if(ans == INT_MAX){
+        cout<<"-1"<<"\n";
+    }
+    else{
+        cout<<ans<<"\n";
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // factorial(1e5,1e9+7);
+    // seive(1e5);
+    ll t = 1;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}

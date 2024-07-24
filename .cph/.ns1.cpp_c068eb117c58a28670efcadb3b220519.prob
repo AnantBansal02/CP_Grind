@@ -1,0 +1,1 @@
+{"name":"Local: ns1","url":"c:\\vs code\\CP_2.0\\ns1.cpp","tests":[{"id":1700402688427,"input":"5 3\n2 2\n1 3\n4 1","output":"2 4 4 2 1"},{"id":1700403902738,"input":"7 4\n0 5\n4 4\n3 5\n6 7","output":"8 10 12 14 14 12 11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\ns1.cpp","group":"local","local":true}

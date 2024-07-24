@@ -1,0 +1,1 @@
+{"name":"Local: countrbs","url":"c:\\vs code\\CP_2.0\\countrbs.cpp","tests":[{"id":1715789274773,"input":"4\n4\n(())\n6\n(()())\n8\n(()()())\n10\n((())(()))","output":"0\n1\n3\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\countrbs.cpp","group":"local","local":true}

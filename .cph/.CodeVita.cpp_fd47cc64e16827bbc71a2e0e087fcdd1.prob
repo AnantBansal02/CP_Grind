@@ -1,0 +1,1 @@
+{"name":"Local: CodeVita","url":"c:\\vs code\\CP_2.0\\CodeVita.cpp","tests":[{"id":1702034434996,"input":"5\n6:-3 2:10 8:6 3:-4 1:5","output":"21"},{"id":1702035520613,"input":"6\n3:-6 5:17 6:3 1:-9 2:-12 9:10","output":"30"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\CodeVita.cpp","group":"local","local":true}

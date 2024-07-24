@@ -1,0 +1,1 @@
+{"name":"Local: GS_Sample_1","url":"c:\\vs code\\CP_2.0\\GS_Sample_1.cpp","tests":[{"id":1699347996771,"input":"6","output":"5"},{"id":1699348004706,"input":"8","output":"9"},{"id":1699348093282,"input":"69","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\GS_Sample_1.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: K Odd Sum","url":"c:\\vs code\\CP_2.0\\K Odd Sum.cpp","tests":[{"id":1706711500229,"input":"2\n2 1\n4 2","output":"1 3 2 4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\K Odd Sum.cpp","group":"local","local":true}

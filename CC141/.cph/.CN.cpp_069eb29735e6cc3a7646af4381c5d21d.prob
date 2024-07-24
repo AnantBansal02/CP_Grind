@@ -1,0 +1,1 @@
+{"name":"Local: CN","url":"c:\\vs code\\CP_2.0\\CC141\\CN.cpp","tests":[{"id":1720116554121,"input":"2\n2\n1 2\n3\n1 2 3\n","output":"1\n3"},{"id":1720116664193,"input":"1\n3\n1 2 3","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\CC141\\CN.cpp","group":"local","local":true}

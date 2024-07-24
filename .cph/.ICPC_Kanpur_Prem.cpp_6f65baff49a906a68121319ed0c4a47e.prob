@@ -1,0 +1,1 @@
+{"name":"Local: ICPC_Kanpur_Prem","url":"c:\\vs code\\CP_2.0\\ICPC_Kanpur_Prem.cpp","tests":[{"id":1700976794700,"input":"4\n1\n343\n2\n4 2\n3\n4 2 4\n4\n1 1 1 1","output":"YES\nYES\nNO\nYES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\vs code\\CP_2.0\\ICPC_Kanpur_Prem.cpp","group":"local","local":true}

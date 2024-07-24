@@ -1,0 +1,55 @@
+#pragma GCC optimize("-Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define dbg(x) cout << #x << " = " << x << "\n"
+#define pb push_back
+#define fi first
+#define se second
+#define INF 1e18
+#define all(x) (x).begin(), (x).end()
+#define set_bits(x) __builtin_popcountll(x)
+
+void solve()
+{
+    ll n; cin >> n;
+    vector<ll> arr(n);
+    for(auto &it : arr) cin >> it;
+    sort(all(arr));
+    vector<ll> fre(n+1, 0);
+    for(auto it : arr) fre[it]++;
+    ll ans = 0;
+    ll bob = 0;
+    priority_queue<ll> pq;
+    for(ll num = 1; num <= n; num++){
+        if(fre[num] == 0) continue;
+        if(bob >= fre[num]){
+            pq.push(fre[num]);
+            bob -= fre[num];
+        }
+        else{
+            if(!pq.empty() and pq.top() > fre[num]){
+                bob += pq.top() - fre[num];pq.pop();pq.push(fre[num]);
+            }
+            bob++;
+            ans++;
+        }
+    }
+    cout << ans << "\n";
+    
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // factorial(1e5,1e9+7);
+    // sieve(1e5);
+    ll t = 1;
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}
